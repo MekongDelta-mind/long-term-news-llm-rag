@@ -30,3 +30,9 @@ RSS feed with news (mostly weekly, some weeks are missing)—around 46 weeks or 
 
 - RSS Feed URL: [https://pythoninvest.com/rss-feed-612566707351.xml](https://pythoninvest.com/rss-feed-612566707351.xml)
 - This represents the weekly financial news feed section of the website: [https://pythoninvest.com/#weekly-fin-news-feed](https://pythoninvest.com/#weekly-fin-news-feed)
+
+
+# Relevant sites
+
+[FeedParser Guide: Parse RSS, Atom & RDF Feeds With Python](https://scrapeops.io/python-web-scraping-playbook/feedparser/)
+
