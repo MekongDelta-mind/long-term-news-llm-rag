@@ -4,20 +4,22 @@ import os
 import xml.etree.ElementTree as ET
 
 
-def extract_turbo_content(raw_xml):
-    """Extracts turbo:content from the raw XML"""
+# If the RSS feed format would be same , then the input to the method would be an element of the python dict `feed`. 
+# So input to this method would be an element which is of the type `dict`.
+def extract_turbo_content(entry_element):
+    """
+    Extracts turbo:content from the raw XML
+    """
     try:
-        # Parse the raw XML to find the turbo:content tag
-        root = ET.fromstring(f"<root>{raw_xml}</root>")  # Wrapping in <root> for safe parsing
-        # Find the turbo:content tag (namespace aware)
-        turbo_content = root.find('.//{http://turbo.yandex.ru}content')
-        if turbo_content is not None:
-            # Return the content as a string (without wrapping tags)
-            return ET.tostring(turbo_content, encoding='unicode', method='html')
-        return None
-    except ET.ParseError as e:
-        print(f"Error parsing XML: {e}")
-        return None
+        if entry_element:  
+            content = entry_element.get('turbo_content')  
+        return content if content else None
+
+    except (AttributeError, KeyError, TypeError) as e:
+        # AttributeError: If entry_element doesn't support dictionary operations
+        # KeyError: If 'turbo_content' doesn't exist
+        # TypeError: If entry_element is not of the expected type
+        print(f"Error extracting turbo content: {str(e)}")
 
 
 def parse_rss_to_json(feed_url, output_file_path):
@@ -70,7 +72,7 @@ def parse_rss_to_json(feed_url, output_file_path):
 if __name__ == "__main__":
     # RSS feed URL and output file path
     feed_url = 'https://pythoninvest.com/rss-feed-612566707351.xml'  # Fin news RSS
-    output_file_path = 'data/input_news_feed.json'
+    output_file_path = '../data/input_news_feed.json' # folder relative to the current notebook
     
     # Parse and save the RSS feed to a JSON file
     parse_rss_to_json(feed_url, output_file_path)
