@@ -1,0 +1,58 @@
+{
+    "content": [
+        {
+            "type": "individual",
+            "start_date": null,
+            "end_date": null,
+            "ticker": "AMZN",
+            "count": 11,
+            "growth": "-0.94%",
+            "text": "Amazon is planning to provide high-speed internet worldwide through its Project Kuiper. This initiative may have a positive impact on the company's stock. Users on Zacks.com have been closely following Amazon, indicating strong interest in the stock. Amazon Prime Video and Freevee will have new content available in August 2023, including \"The Lost Flowers of Alice Hart\" and \"Cocaine Bear.\" A Truist analyst predicts robust revenue for Amazon, driven by strong e-commerce demand and cost optimization. However, Amazon is facing challenges regarding warehouse safety as hearings on OSHA violations begin."
+        },
+        {
+            "type": "individual",
+            "start_date": null,
+            "end_date": null,
+            "ticker": "NFLX",
+            "count": 19,
+            "growth": "-0.23%",
+            "text": "Netflix's stock has been fluctuating after the company reported mixed quarterly results. While it beat subscriber estimates with 5.9 million paid net adds, its Q2 revenue of $8.19 billion missed expectations. However, some analysts remain optimistic about Netflix's future growth and expect it to rebound. The company is also rolling out paid sharing to more countries and has dropped its cheapest streaming plan without ads in the US and UK to push users towards its ad-supported service. Despite these developments, some caution that the stock may be overvalued."
+        },
+        {
+            "type": "individual",
+            "start_date": null,
+            "end_date": null,
+            "ticker": "VZ",
+            "count": 13,
+            "growth": "1.39%",
+            "text": "Verizon Business and the VA Palo Alto Health Care System have partnered to deploy a full spectrum private 5G network, creating the first full spectrum 5G hospital. This network will enable unprecedented care for veterans and improve healthcare services. Verizon Communications will report second-quarter 2023 earnings on July 25. Verizon is also continuing to upgrade its network in various locations, including Kentucky, Cleveland, and Daytona. Despite a recent plunge in stock value, Verizon's high dividend yield and potential for capital appreciation make it an attractive investment."
+        },
+        {
+            "type": "individual",
+            "start_date": null,
+            "end_date": null,
+            "ticker": "CVNA",
+            "count": 21,
+            "growth": "-2.46%",
+            "text": "Carvana, an online used car dealer, announced major updates that could have significant implications for investors. The company reported solid quarterly results, a favorable debt deal, and newly enabled access to equity capital, reducing liquidity risks. Despite a recent downgrade from RBC Capital due to concerns over margins and unit economics, other analysts have maintained positive outlooks for the stock. Carvana's stock soared nearly 50% after its second-quarter earnings report beat expectations. The company also announced a debt restructuring deal with bondholders, expected to improve liquidity."
+        },
+        {
+            "type": "individual",
+            "start_date": null,
+            "end_date": null,
+            "ticker": "DJIA",
+            "count": 8,
+            "growth": "-0.58%",
+            "text": "The stock market rally is expected to continue as long as there is no sign of a recession, according to Steve Eisman of Neuberger Berman. However, experts caution that transportation stocks should not be overestimated as an indicator of the overall economy. US bank lending has fallen slightly, while housing starts and retail sales have also shown weakness. Overall, the US economy is in a precarious state with concerns of a possible recession by February."
+        },
+        {
+            "type": "individual",
+            "start_date": null,
+            "end_date": null,
+            "ticker": "SPY",
+            "count": 7,
+            "growth": "0.44%",
+            "text": "The news includes various headlines related to the stock market, cryptocurrency, technology, politics, and the world economy. Some notable points include Cathie Wood's flagship ETF exiting Alibaba and other stocks, Elon Musk's Tesla reportedly removing Bitcoin as a payment option, and a prediction by Tom Lee that the S&amp;P 500 could hit 5,000 in 5 months. Other headlines discuss investor sentiment improving, regulatory actions in the cryptocurrency sector, and political developments in the US and world politics."
+        }
+    ]
+}
