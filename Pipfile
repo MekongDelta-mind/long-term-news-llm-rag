@@ -15,6 +15,7 @@ pyarrow = "*"
 fastparquet = "*"
 scikit-learn = "*"
 sentence-transformers = "*"
+faiss-cpu = "*"
 
 [dev-packages]
 
