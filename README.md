@@ -100,6 +100,42 @@ To add market statistics:
 python scripts/03_add_market_stats.py
 ```
 
+### 4. News Analysis (`scripts/04_answer_one_question.py`)
+- Implements RAG (Retrieval-Augmented Generation) for analyzing news and market trends
+- Supports both ticker-specific and market-wide analysis
+- Features:
+  * Custom question support for targeted analysis
+  * Comprehensive source documentation
+  * Performance metrics integration
+  * Market comparison analysis
+- Prerequisites:
+  * Python packages: langchain, openai, python-dotenv, pandas, faiss-cpu
+  * OPENAI_API_KEY environment variable
+  * Input file: data/news_feed_with_market_stats.parquet
+
+Usage examples:
+```bash
+# Ask about specific company (automatically detects ticker)
+python scripts/04_answer_one_question.py "What are the latest developments for NVDA?"
+python scripts/04_answer_one_question.py "How has Tesla performed in terms of revenue and growth?"
+
+# Ask about specific aspects
+python scripts/04_answer_one_question.py "What are NVDA's AI developments and market performance?"
+python scripts/04_answer_one_question.py "Tell me about Tesla's manufacturing challenges"
+
+# Hide source documents
+python scripts/04_answer_one_question.py "What are NVDA's recent developments?" --show_sources=false
+```
+
+Parameters:
+- `question`: Required. The question to analyze (e.g., "What are the latest developments for NVDA?")
+- `--show_sources`: Optional. Show source documents, defaults to True
+
+The script automatically:
+- Detects if the question is about a specific ticker
+- Shows chronological analysis with period headers [YYYY-MM-DD..YYYY-MM-DD, +/-X.X% vs market]
+- Includes performance metrics and context for each period
+
 ## Typical workflow
 
 1. Fetch RSS feed data (optional, as step 2 can fetch directly from the feed)
@@ -133,20 +169,24 @@ The project includes several experimental Jupyter notebooks that demonstrate dif
 - Successfully extracts structured information from news articles
 - Serves as the prototype for the production script (02_get_content_data_flattened.py)
 
-### 3. Basic RAG Implementation (`notebooks/03_RAG_from_content.ipynb`)
+### 3. MinSearch Implementation (`notebooks/03_minsearch_from_content.ipynb`)
 - Implements a basic search system using minsearch for text-based filtering
 - Features include field boosting (text, ticker, growth) and link-based filtering
 - Provides simple search functionality across news type, dates, tickers, and content
 - Note: This basic implementation was later enhanced in notebook 04
 
-### 4. Augmented RAG System (`notebooks/04_Augmented_generation_RAG.ipynb`)
+### 4. RAG System (`notebooks/04_RAG_from_content.ipynb`)
 - Implements a comprehensive RAG system using LangChain and FAISS for efficient vector-based retrieval
 - Features advanced search prioritizing high-performance metrics:
-  * Indexes weekly returns and market outperformance
-  * Enables semantic search through FAISS embeddings
-  * Optimizes for finding significant market movements and trends
-- Enhances results using GPT4o-mini for content generation and analysis
-- Represents the final production-ready implementation
+  * Automatic ticker detection from questions
+  * Chronological analysis with period headers [YYYY-MM-DD..YYYY-MM-DD, +/-X.X% vs market]
+  * Performance metrics and market comparisons
+  * Semantic search through FAISS embeddings
+- Provides natural language interface:
+  * Ask about specific companies (e.g., "What are NVDA's AI developments?")
+  * Query particular aspects (e.g., "How has Tesla's manufacturing evolved?")
+  * Control source visibility with show_sources parameter
+- Represents the final production-ready implementation with the same functionality as the script
 
 ### Data Processing Flow
 The project processes data through several stages:
@@ -202,4 +242,3 @@ The final dataset (`data/news_feed_with_market_stats.parquet`) uses Parquet form
     "link": "source_url",
     "market_weekly_return": number
 }
-```
